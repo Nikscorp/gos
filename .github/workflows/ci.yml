@@ -1,0 +1,14 @@
+name: Docker Image CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run gitbook creation
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: bash gitbook_gh_actions.sh
+
