@@ -14,8 +14,8 @@ AUTHOR="$GITHUB_ACTOR <>"
 
 
 function setup() {
-  npm install -g gitbook-cli
-  apt-get install -y xdg-utils wget xz-utils
+  sudo npm install -g gitbook-cli
+  sudo apt-get install -y xdg-utils wget xz-utils
   sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
 }
 
@@ -31,6 +31,8 @@ function build() {
 
 function publish() {
   pushd "$SRC_FOLDER"/_book
+  git config --global user.email "ci@nikscorp.com"
+  git config --global user.name "CI Bot"
   git init
   git remote add upstream "$UPSTREAM"
   git fetch --prune upstream
