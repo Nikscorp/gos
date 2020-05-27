@@ -16,7 +16,7 @@ AUTHOR="$GITHUB_ACTOR <>"
 function setup() {
   sudo npm install -g gitbook-cli
   sudo apt-get install -y xdg-utils wget xz-utils
-  sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+  sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin version=3.48.0
 }
 
 function build() {
