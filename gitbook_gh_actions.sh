@@ -12,10 +12,6 @@ UPSTREAM="https://$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git"
 MESSAGE="Rebuild doc for action GITHUB_ACTION"
 AUTHOR="$GITHUB_ACTOR <>"
 
-if [ "$TRAVIS_BRANCH" != "$MAIN_BRANCH" ];then
-  echo "Documentation won't build: Not on branch $MAIN_BRANCH"
-  exit 0
-fi
 
 function setup() {
   npm install -g gitbook-cli

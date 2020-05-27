@@ -1,6 +1,9 @@
-name: Docker Image CI
+name: GitBook CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
